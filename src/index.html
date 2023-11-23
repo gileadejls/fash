@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/output.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+    <title>It's Fashion Modas</title>
+</head>
+<body class="font-body">
+    <div class="menu-mobile-items w-56 bg-white shadow-xl fixed h-screen  right-0 z-40 pr-5 pt-5 translate-x-56 transition-transform">
+        <!-- CLOSE MENU-->
+        <div class="w-full flex justify-end">
+            <img src="/assets/icons/close.png" alt="" id="close">
+        </div>
+        <div class="flex flex-col w-full items-end pt-10 gap-10">
+            <a href="#inicio" class="font-bold">INICIO</a>
+            <a href="#lancamentos" class="font-bold">LANÇAMENTOS</a>
+            <a href="#ofertas" class="font-bold">OFERTAS</a>
+            <a href="#servicos" class="font-bold">SERVIÇOS</a>
+            <a href="#fale-conosco" class="font-bold">CONTATO</a>
+        </div>
+    </div>
+    <div class="cont w-full h-full relative">
+
+        <header>
+            <div class="menu-mobile w-full flex justify-end pr-5 pt-2">
+                <img src="/assets/icons/menu-aberto.png" alt="" class="scale-75 cursor-pointer" id="menu">
+                
+            </div>
+            
+        </header>
+       <section class="w-full h-36  flex items-center justify-center flex-col">
+            <h1 class="font-body font-bold text-3xl">IT'S FASHION</h1>
+            <h2 class="italic">Roupas, calçados e acessórios</h2>
+       </section>
+
+       <!-- SLIDER CONTAINER-->
+       <section class="slider-cont  w-full" id="inicio">
+            <swiper-container class="mySwiper" autoplay="true">
+                <swiper-slide class="w-full">
+                    <img src="/assets/images/banner/banner1.png" alt="" class="bg-cover w-full">
+                </swiper-slide>
+                <swiper-slide>
+                    <img src="/assets/images/banner/banner2.png" alt="">
+                </swiper-slide>
+          </swiper-container>
+       </section>
+
+       <!-- FORMAS DE PAGAMENTO -->
+       <div class="h-40  flex flex-col justify-center items-center mb-5">
+        <img src="/assets/icons/credit.png" alt="" class="scale-75">
+        <h2 class="font-bold">FORMAS DE PAGAMENTOS</h2>
+        <h3 class="text-sm text-gray-600">Parcele suas compras no cartão até 6x sem juros</h3>
+       </div>
+
+       <!-- PRODUTOS -->
+       <section class="mb-10 h-full" id="lancamentos">
+            <div class="flex w-full py-4 justify-center gap-1">
+                <h1 class="font-bold text-xl">LANÇAMENTOS</h1>
+                <h2 class="text-xl">ITSFASHION</h2>
+            </div>
+
+            <!-- IMAGE PRODUTO -->
+            <div class="w-full flex flex-col h-full relative">
+                <div>
+                    <img src="/assets//images/img1.jpeg" alt="">
+                </div>
+                <div class="w-full p-4 text-center">
+                    <p class="">Trouxemos esse cropped que além de ter um ótimo caimento, possuí esse lindo tom que deixa sua combinação ainda mais bonita.</p>
+                </div>
+            </div>
+       </section>
+       <section class="w-full " id="ofertas">
+
+            <!-- MELHORES OFERTAS! -->
+            <div class="flex w-full py-4 justify-center gap-1">
+                <h1 class="font-bold text-xl">MELHORES</h1>
+                <h2 class="text-xl">OFERTAS</h2>
+            </div>
+
+            <!-- PRODUTOS !-->
+            <div class="grid grid-cols-2 px-3 gap-x-3 gap-y-10">
+                <div class="flex flex-col gap-3">
+                    <!-- card image-->
+                    <div class="h-52 bg-contain">
+                        <img src="/assets/images/img3.jpg" alt="" class="h-full w-full">
+                    </div>
+                    <!-- card text-->
+                    <div>
+                        <p class="text-sm mb-2 text-center"> peça super diferenciada  modernidade que está altamente na moda.</p>
+                    </div>
+                    <button class="bg-black text-white px-4 py-2 text-xs ">Veja mais</button>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <!-- card image-->
+                    <div class="h-52 bg-contain">
+                        <img src="/assets/images/img4.jpeg" alt="" class="h-full w-full">
+                    </div>
+                    <!-- card text-->
+                    <div>
+                        <p class="text-sm mb-2 text-center"> tricô modal é a peça fundamental no closet em qualquer estação. </p>
+                    </div>
+                    <button class="bg-black text-white px-4 py-2 text-xs ">Veja mais</button>
+                </div>
+                
+
+                <!-- PAGE 2-->
+                <div class="flex flex-col gap-3">
+                    <!-- card image-->
+                    <div class="h-52 bg-contain">
+                        <img src="/assets/images/img6.jpg" alt="" class="h-full w-full">
+                    </div>
+                    <!-- card text-->
+                    <div>
+                        <p class="text-sm mb-2 text-center"> peça super diferenciada  modernidade que está altamente na moda.</p>
+                    </div>
+                    <button class="bg-black text-white px-4 py-2 text-xs ">Veja mais</button>
+                </div>
+
+                <div class="flex flex-col gap-3">
+                    <!-- card image-->
+                    <div class="h-52 bg-contain">
+                        <img src="/assets/images/img5.jpeg" alt="" class="h-full w-full">
+                    </div>
+                    <!-- card text-->
+                    <div>
+                        <p class="text-sm mb-2 text-center"> peça super diferenciada  modernidade que está altamente na moda.</p>
+                    </div>
+                    <button class="bg-black text-white px-4 py-2 text-xs ">Veja mais</button>
+                </div>
+                
+            </div>
+       </section>
+       <div class="py-20  mt-10 flex flex-col items-center justify-center gap-5">
+            <div class="flex w-full justify-center gap-1" id="servicos">
+                <h1 class="font-bold text-xl">EM TODAS</h1>
+                <h2 class="text-xl">AS PLATAFORMAS</h2>
+            </div>
+            <div class="flex justify-around w-full">
+                <img src="/assets/icons-social/facebook.png" alt="" class="w-10">
+                <img src="/assets/icons-social/instagram.png" alt="" class="w-10">
+                <img src="/assets/icons-social/shein.jpg" alt="" class="w-10">
+                <img src="/assets/icons-social/shoope.png" alt="" class="w-10">
+                <img src="/assets/icons-social/linkedin.png" alt="" class="w-10">
+                <img src="/assets/icons-social/whatsapp.png" alt=""class="w-10">
+            </div>
+       </div>
+       <section class="w-full">
+            <video autoplay muted plays-inline loop>
+                <source src="/assets/videos/video.mp4" type="video/mp4">
+            </video>
+       </section>
+       <footer>
+            <div class=" py-20 ">
+                <h1 class="font-bold pl-4 text-white bg-black w-36 mb-10">Fale Conosco</h1>
+                <form action="" class="flex flex-col p-5 gap-6 " id="fale-conosco">
+                    <label class=" ">Nome Completo</label>
+                    <input type="text" name="nome" class="py-2 px-4 outline-none shadow-lg" placeholder="seu nome completo">
+                    <label class=" ">E-mail</label>
+                    <input type="email" name="nome" class="py-2 px-4 outline-none shadow-lg" placeholder="email@gmail.com">
+                    <label class=" ">telefone</label>
+                    <input type="text" name="nome" class="py-2 px-4 outline-none shadow-lg" placeholder="(xx)xxxxx-xxxx">
+                    <button type="submit" class="bg-black text-white py-2 font-bold shadow-lg">Enviar</button>
+                </form>
+            </div>
+            <div class=" flex bg-black text-white px-3 py-10 w-full justify-center gap-10" >
+                <img src="/assets/icons/logo.png" alt="" class="scale-50 w-16">
+                <div class="flex flex-col gap-2" id="contato">
+                    <h2 class="text-xs">São Paulo - SP</h2>
+                    <h2 class="text-xs">ITS FASHION© 2019</h2>
+                </div>
+            </div>
+       </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="/src/script/script.js"></script>
+    
+    
+</body>
+</html>

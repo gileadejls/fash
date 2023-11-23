@@ -1,0 +1,17 @@
+{
+  "name": "fashionpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "style": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^10.4.16",
+    "swiper": "^11.0.5",
+    "tailwindcss": "^3.3.5"
+  }
+}
