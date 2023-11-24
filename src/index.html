@@ -291,7 +291,17 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="./script/script.js"></script>
-    
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('http://127.0.0.1:5500/src/script/service.worker.js')
+                .then(registration => {
+                    console.log('Service Worker registrado com sucesso:', registration);
+                })
+                .catch(error => {
+                    console.error('Erro ao registrar o Service Worker:', error);
+                });
+        }
+    </script>
     
 </body>
 </html>
