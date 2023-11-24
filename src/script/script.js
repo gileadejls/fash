@@ -3,7 +3,6 @@ const close = document.querySelector("#close")
 const mobileItems = document.querySelector(".menu-mobile-items")
 
 
-
 menu.addEventListener("click", ()=>{
     mobileItems.style = "transform: translateX(0);"
 })
