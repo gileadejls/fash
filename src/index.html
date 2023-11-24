@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Cache-Control" content="max-age=31536000">
     <script src="../dist/bundle.js"></script>
-    <!-- <link rel="stylesheet" href="../dist/style.css" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="../dist/output.css" type="text/css"> -->
     <title>It's Fashion Modas</title>
 </head>
-<body class="font-body">
-    <div class="menu-mobile-items w-56 bg-white shadow-xl fixed h-screen  right-0 z-40 pr-5 pt-5 translate-x-56 transition-transform">
+<body class="font-body w-screen flex justify-center">
+    <div class="menu-mobile-items w-56 bg-white shadow-xl fixed h-screen  right-0 z-40 pr-5 pt-5 translate-x-56 transition-transform lg:hidden">
         <!-- CLOSE MENU-->
         <div class="w-full flex justify-end">
             <img src="./icons/close.png" alt="" id="close">
@@ -22,16 +21,30 @@
             <a href="#fale-conosco" class="font-bold">CONTATO</a>
         </div>
     </div>
-    <div class="cont w-full h-full relative">
+    <div class=" h-full relative w-full max-w-5xl">
 
         <header>
-            <div class="menu-mobile w-full flex justify-end pr-5 pt-2">
+            <div class="menu-mobile w-full flex justify-end pr-5 pt-2 md:hidden">
                 <img src="./icons/menu-aberto.png" alt="" class="scale-75 cursor-pointer" id="menu">
                 
             </div>
+            <!-- MENU DESKTOP-->
+            <div class="hidden md:flex py-10 w-full md:justify-around lg:justify-between items-center">
+                <div>
+                    <h1 class="font-body font-bold text-3xl">IT'S FASHION</h1>
+                    <h2 class="italic">Roupas, calçados e acessórios</h2>
+                </div>
+                <nav class="flex gap-5 md:text-xs lg:text-sm">
+                    <a href="#inicio" class="font-bold">INICIO</a>
+                    <a href="#lancamentos" class="font-bold">LANÇAMENTOS</a>
+                    <a href="#ofertas" class="font-bold">OFERTAS</a>
+                    <a href="#servicos" class="font-bold">SERVIÇOS</a>
+                    <a href="#fale-conosco" class="font-bold">CONTATO</a>
+                </nav>
+            </div>
             
         </header>
-       <section class="w-full h-36  flex items-center justify-center flex-col">
+       <section class="w-full h-36  flex items-center justify-center flex-col md:hidden">
             <h1 class="font-body font-bold text-3xl">IT'S FASHION</h1>
             <h2 class="italic">Roupas, calçados e acessórios</h2>
        </section>
@@ -40,19 +53,28 @@
        <section class="slider-cont  w-full" id="inicio">
             <swiper-container class="mySwiper" autoplay="true">
                 <swiper-slide class="w-full">
-                    <img src="./images/banner/banner1mobile.jpg" alt="" class="bg-cover w-full">
+                    <img src="./images/banner/banner1mobile.jpg" alt="" class="bg-cover w-full sm:hidden">
+                    <img src="./images/banner/banner01.jpg" alt="" class="bg-cover w-full hidden sm:block">
                 </swiper-slide>
                 <swiper-slide>
-                    <img src="./images/banner/banner2mobile.jpg" alt="" class="bg-cover w-full">
+                    <img src="./images/banner/banner2mobile.jpg" alt="" class="bg-cover w-full sm:hidden">
+                    <img src="./images/banner/banner02.jpg" alt="" class="bg-cover w-full hidden sm:block">
                 </swiper-slide>
           </swiper-container>
        </section>
 
        <!-- FORMAS DE PAGAMENTO -->
-       <div class="h-40  flex flex-col justify-center items-center mb-5">
-        <img src="./icons/credit.png" alt="" class="scale-75">
-        <h2 class="font-bold">FORMAS DE PAGAMENTOS</h2>
-        <h3 class="text-sm text-gray-600">Parcele suas compras no cartão até 6x sem juros</h3>
+       <div class="w-full flex justify-around py-12 items-center">
+        <div class=" flex flex-col items-center">
+            <img src="./icons/credit.png" alt="" class="w-12 lg:w-10">
+            <h2 class="font-bold">FORMAS DE PAGAMENTOS</h2>
+            <h3 class="text-sm text-gray-600">Parcele suas compras no cartão até 6x sem juros</h3>
+        </div>
+        <div class=" flex-col items-center hidden sm:flex">
+            <img src="./icons/pix.jpg" alt="" class="w-10 mb-1">
+            <h2 class="font-bold">PAGAMENTO FACILITADO</h2>
+            <h3 class="text-sm text-gray-600">Pix com 5%OFF</h3>
+        </div>
        </div>
 
        <!-- PRODUTOS -->
@@ -63,12 +85,41 @@
             </div>
 
             <!-- IMAGE PRODUTO -->
-            <div class="w-full flex flex-col h-full relative">
-                <div>
-                    <img src="./images/img1.jpeg" alt="">
+            <div class="w-full flex flex-col h-full relative sm:flex-row  items-center sm:justify-around sm:gap-3 sm:px-4 lg:px-0 lg:gap-0">
+                <div class="w-full h-full sm:hidden flex flex-col items-center text-center">
+                    <div class="relative">
+                        <img src="./images/img1.jpeg" alt="">
+                    </div>
+                    <p class="pt-3 text-gray-700">Trouxemos esse cropped que além de ter um ótimo caimento, possuí esse lindo tom que deixa sua combinação ainda mais bonita.</p>
                 </div>
-                <div class="w-full p-4 text-center">
-                    <p class="">Trouxemos esse cropped que além de ter um ótimo caimento, possuí esse lindo tom que deixa sua combinação ainda mais bonita.</p>
+                <div class="hidden sm:block w-full sm:w-80 h-full">
+                    <div class="relative">
+                        <img src="./images/produtos/img1.jpg" alt="" class="opacity-0 sm:opacity-100">
+                        <img src="./images/produtos/img01.jpg" alt="" class="absolute bottom-0 top-0 opacity-0 hover:opacity-100 transition-opacity" >
+                    </div>
+                    <div class="h-32 p-2 text-center ">
+                        <p class="text-sm">Uma dica muito importante sobre o que usar com cropped é optar por peças de cintura alta. Obviamente essa não é uma regra, no entanto, o cropped usado com peças de cintura alta garante uma silhueta mais elegante e bonita.</p>
+                    </div>
+                </div>
+                <div class="w-80 h-full  hidden sm:block">
+                    <div class="relative">
+                        <img src="./images/produtos/img2.jpeg" alt="">
+                        <img src="./images/produtos/img02.jpeg" alt="" class="absolute bottom-0 top-0 opacity-0 hover:opacity-100 transition-opacity" >
+                    </div>
+                    <div class="h-32 p-2 text-center ">
+                        <p class="text-sm">O cropped se tornou uma das peças mais populares e utilizadas pelas brasileiras. Trouxemos esse modelo com um tom mais alegre, para trazer leveza e conforto para suas combinações.
+                        </p>
+                    </div>
+                </div>
+                <div class="w-80 h-full  hidden sm:block">
+                    <div class="relative">
+                        <img src="./images/produtos/img3.jpg" alt="">
+                        <img src="./images/produtos/img03.jpg" alt="" class="absolute bottom-0 top-0 opacity-0 hover:opacity-100 transition-opacity" >
+                    </div>
+                    <div class="h-32 p-2 text-center ">
+                        <p class="text-sm">Um look perfeito para compor combinações nesta estação tão aconchegante que é o outono!
+                            O tricot além de lindo, confortável e versátil, ele se adequa perfeitamente ao corpo e traz uma elegância sem igual para as amantes da peça.</p>
+                    </div>
                 </div>
             </div>
        </section>
@@ -81,56 +132,103 @@
             </div>
 
             <!-- PRODUTOS !-->
-            <div class="grid grid-cols-2 px-3 gap-x-3 gap-y-10">
-                <div class="flex flex-col gap-3">
-                    <!-- card image-->
-                    <div class="h-52 bg-contain">
-                        <img src="./images/img3.jpg" alt="" class="h-full w-full">
-                    </div>
-                    <!-- card text-->
+            <div class="flex flex-col gap-10">
+                <!-- PAGE 01-->
+                <div class="w-full h-full flex pl-3 gap-3 overflow-auto  lg:justify-around">
+                    <!-- card 1 -->
                     <div>
-                        <p class="text-sm mb-2 text-center"> peça super diferenciada  modernidade que está altamente na moda.</p>
+                        <div class="relative">
+                            <img src="./images/prod-desktop/img01.webp" alt="" class=" w-40 sm:w-56">
+                            <img src="./images/prod-desktop/img1.webp" alt="" class="w-40  sm:w-56 absolute top-0 bottom-0 opacity-0 hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="flex items-center p-3 gap-3 w-40 sm:w-56">
+                            <p class="text-xs">Blusa Feminina Trico Modal manga curta</p>
+                            <p class="font-bold">R$39,99</p>
+                        </div>
                     </div>
-                    <button class="bg-black text-white px-4 py-2 text-xs ">Veja mais</button>
-                </div>
-                <div class="flex flex-col gap-3">
-                    <!-- card image-->
-                    <div class="h-52 bg-contain">
-                        <img src="./images/img4.jpeg" alt="" class="h-full w-full">
-                    </div>
-                    <!-- card text-->
+                    <!-- card 2 -->
                     <div>
-                        <p class="text-sm mb-2 text-center"> tricô modal é a peça fundamental no closet em qualquer estação. </p>
+                        <div class="relative">
+                            <img src="./images/prod-desktop/img02.webp" alt="" class=" w-40 sm:w-56">
+                            <img src="./images/prod-desktop/img2.webp" alt="" class="w-40  sm:w-56 absolute top-0 bottom-0 opacity-0 hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="flex items-center p-3 gap-3 w-40 sm:w-56">
+                            <p class="text-xs">Blusa Feminina Trico Modal manga curta</p>
+                            <p class="font-bold">R$39,99</p>
+                        </div>
                     </div>
-                    <button class="bg-black text-white px-4 py-2 text-xs ">Veja mais</button>
-                </div>
-                
+                    <!-- card 3 -->
+                    <div>
+                        <div class="relative">
+                            <img src="./images/prod-desktop/img03.webp" alt="" class=" w-40 sm:w-56">
+                            <img src="./images/prod-desktop/img3.webp" alt="" class="w-40  sm:w-56 absolute top-0 bottom-0 opacity-0 hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="flex items-center p-3 gap-3 w-40 sm:w-56">
+                            <p class="text-xs">Blusa Feminina Trico Modal manga curta</p>
+                            <p class="font-bold">R$39,99</p>
+                        </div>
+                    </div>
+                    <!-- card 4 -->
+                    <div>
+                        <div class="relative">
+                            <img src="./images/prod-desktop/img04.jpeg" alt="" class=" w-40 sm:w-56">
+                            <img src="./images/prod-desktop/img4.jpeg" alt="" class="w-40  sm:w-56 absolute top-0 bottom-0 opacity-0 hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="flex items-center p-3 gap-3 w-40 sm:w-56">
+                            <p class="text-xs">Regata Gola Alta Feminina </p>
+                            <p class="font-bold">R$19,99</p>
+                        </div>
+                    </div>
 
-                <!-- PAGE 2-->
-                <div class="flex flex-col gap-3">
-                    <!-- card image-->
-                    <div class="h-52 bg-contain">
-                        <img src="./images/img6.jpg" alt="" class="h-full w-full">
-                    </div>
-                    <!-- card text-->
-                    <div>
-                        <p class="text-sm mb-2 text-center"> peça super diferenciada  modernidade que está altamente na moda.</p>
-                    </div>
-                    <button class="bg-black text-white px-4 py-2 text-xs ">Veja mais</button>
                 </div>
 
-                <div class="flex flex-col gap-3">
-                    <!-- card image-->
-                    <div class="h-52 bg-contain">
-                        <img src="./images/img5.jpeg" alt="" class="h-full w-full">
-                    </div>
-                    <!-- card text-->
+                <!-- PAGE 02-->
+                <div class="w-full h-full flex pl-3 gap-3 overflow-auto  lg:justify-around">
+                    <!-- card 1 -->
                     <div>
-                        <p class="text-sm mb-2 text-center"> peça super diferenciada  modernidade que está altamente na moda.</p>
+                        <div class="relative">
+                            <img src="./images/prod-desktop/img05.jpeg" alt="" class=" w-40 sm:w-56">
+                            <img src="./images/prod-desktop/img5.jpeg" alt="" class="w-40  sm:w-56 absolute top-0 bottom-0 opacity-0 hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="flex items-center p-3 gap-3 w-40 sm:w-56">
+                            <p class="text-xs">Blusa moda Feminina com bolso</p>
+                            <p class="font-bold text-red-500">R$24,99</p>
+                        </div>
                     </div>
-                    <button class="bg-black text-white px-4 py-2 text-xs ">Veja mais</button>
+                    <!-- card 2 -->
+                    <div>
+                        <div class="relative">
+                            <img src="./images/prod-desktop/img06.webp" alt="" class=" w-40 sm:w-56">
+                            <img src="./images/prod-desktop/img6.webp" alt="" class="w-40  sm:w-56 absolute top-0 bottom-0 opacity-0 hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="flex items-center p-3 gap-3 w-40 sm:w-56">
+                            <p class="text-xs">Top Cropped Feminino Elastano</p>
+                            <p class="font-bold">R$24,99</p>
+                        </div>
+                    </div>
+                    <!-- card 3 -->
+                    <div>
+                        <div class="relative">
+                            <img src="./images/prod-desktop/img07.webp" alt="" class=" w-40 sm:w-56">
+                            <img src="./images/prod-desktop/img7.webp" alt="" class="w-40  sm:w-56 absolute top-0 bottom-0 opacity-0 hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="flex items-center p-3 gap-3 w-40 sm:w-56">
+                            <p class="text-xs">Regata feminina alça larga viscolycra</p>
+                            <p class="font-bold">R$19,99</p>
+                        </div>
+                    </div>
+                    <!-- card 4 -->
+                    <div>
+                        <div class="relative">
+                            <img src="./images/prod-desktop/img08.webp" alt="" class=" w-40 sm:w-56">
+                            <img src="./images/prod-desktop/img8.webp" alt="" class="w-40  sm:w-56 absolute top-0 bottom-0 opacity-0 hover:opacity-100 transition-opacity">
+                        </div>
+                        <div class="flex items-center p-3 gap-3 w-40 sm:w-56">
+                            <p class="text-xs">Vestido Canelado alça fina com bojo </p>
+                            <p class="font-bold text-red-500">R$25,48</p>
+                        </div>
+                    </div>
                 </div>
-                
             </div>
        </section>
        <div class="py-20  mt-10 flex flex-col items-center justify-center gap-5">
@@ -147,10 +245,27 @@
                 <img src="./icons-social/whatsapp.png" alt=""class="w-10">
             </div>
        </div>
-       <section class="w-full">
-            <video autoplay muted plays-inline loop>
+       <section class="w-full flex lg:flex-row justify-center items-center">
+            <video autoplay muted plays-inline loop class="w-screen sm:w-80">
                 <source src="./videos/comprimido.mp4" type="video/mp4">
             </video>
+            <div class=" hidden sm:flex w-full flex-col lg:pl-24 sm:px-4 sm:text-center gap-10 lg:mb-20 ">
+                <h1 class="font-bold lg:text-3xl lg:mb-20 lg:pt-14 text-xl">Por que somos especiais?</h1>
+                <div class="h-full flex flex-col lg:gap-10 gap-8 px-5">
+                    <div >
+                        <h2 class="lg:text-xl font-bold mb-1">Roupas que Refletem Seu Estilo</h2>
+                        <p class="text-sm lg:text-lg">Explore nossa seleção única que abraça diversos estilos, garantindo que você encontre peças que expressem sua individualidade.</p>
+                    </div>
+                    <div>
+                        <h2 class="lg:text-xl font-bold mb-1">Qualidade Inigualável</h2>
+                        <p class="text-sm lg:text-lg">Na nossa loja, priorizamos a qualidade. Cada item é cuidadosamente selecionado para garantir durabilidade e estilo, proporcionando um guarda-roupa confiável e moderno.</p>
+                    </div>
+                    <div>
+                        <h2 class="lg:text-xl font-bold mb-1">Atendimento Personalizado</h2>
+                        <p class="text-sm lg:text-lg">Oferecemos uma experiência de compra personalizada, com uma equipe dedicada a ajudar na escolha perfeita. Sua satisfação é nossa missão. Venha descobrir o que faz a nossa loja única!</p>
+                    </div>
+                </div>
+            </div>
        </section>
        <footer>
             <div class=" py-20 ">
