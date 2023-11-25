@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="cache" content="public">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- <script src="./dist/bundle.js"></script> -->
     <link rel="stylesheet" href="./dist/output.css" type="text/css">
     <title>It's Fashion Modas</title>
@@ -87,13 +88,13 @@
 
             <!-- IMAGE PRODUTO -->
             <div class="w-full flex flex-col h-full relative sm:flex-row  items-center sm:justify-around sm:gap-3 sm:px-4 lg:px-0 lg:gap-0">
-                <div class="w-full h-full sm:hidden flex flex-col items-center text-center">
+                <div class="w-full h-full sm:hidden flex flex-col items-center text-center" data-aos="fade-up" data-aos-duration="2000">
                     <div class="relative">
                         <img src="./src/images/img-9.jpeg" alt="" style="width: 360px; height: 360px;">
                     </div>
                     <p class="pt-3 text-gray-700">Trouxemos esse cropped que além de ter um ótimo caimento, possuí esse lindo tom que deixa sua combinação ainda mais bonita.</p>
                 </div>
-                <div class="hidden sm:block w-full sm:w-80 h-full">
+                <div class="hidden sm:block w-full sm:w-80 h-full" data-aos="fade-up" data-aos-duration="2000">
                     <div class="relative">
                         <img src="./src/images/produtos/img1.jpg" alt="" class="opacity-0 sm:opacity-100"  style="width: 320px; height: 400px;">
                         <img src="./src/images/produtos/img01.jpg" alt="" class="absolute bottom-0 top-0 opacity-0 hover:opacity-100 transition-opacity"  style="width: 320px; height: 400px;">
@@ -102,7 +103,7 @@
                         <p class="text-sm">Uma dica muito importante sobre o que usar com cropped é optar por peças de cintura alta. Obviamente essa não é uma regra, no entanto, o cropped usado com peças de cintura alta garante uma silhueta mais elegante e bonita.</p>
                     </div>
                 </div>
-                <div class="w-80 h-full  hidden sm:block">
+                <div class="w-80 h-full  hidden sm:block" data-aos="fade-up" data-aos-duration="2000">
                     <div class="relative">
                         <img src="./src/images/produtos/img2.jpeg" alt=""  style="width: 320px; height: 400px;">
                         <img src="./src/images/produtos/img02.jpeg" alt="" class="absolute bottom-0 top-0 opacity-0 hover:opacity-100 transition-opacity"   style="width: 320px; height: 400px;">
@@ -112,7 +113,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="w-80 h-full  hidden sm:block">
+                <div class="w-80 h-full  hidden sm:block" data-aos="fade-up" data-aos-duration="2000">
                     <div class="relative">
                         <img src="./src/images/produtos/img3.jpg" alt=""  style="width: 320px; height: 400px;">
                         <img src="./src/images/produtos/img03.jpg" alt="" class="absolute bottom-0 top-0 opacity-0 hover:opacity-100 transition-opacity"  style="width: 320px; height: 400px;">
@@ -135,7 +136,7 @@
             <!-- PRODUTOS !-->
             <div class="flex flex-col gap-10">
                 <!-- PAGE 01-->
-                <div class="w-full h-full flex pl-3 gap-3 overflow-auto  lg:justify-around">
+                <div class="w-full h-full flex pl-3 gap-3 overflow-auto  lg:justify-around" data-aos="fade-up" data-aos-duration="1000">
                     <!-- card 1 -->
                     <div>
                         <div class="relative">
@@ -200,7 +201,7 @@
                 </div>
 
                 <!-- PAGE 02-->
-                <div class="w-full h-full flex pl-3 gap-3 overflow-auto  lg:justify-around">
+                <div class="w-full h-full flex pl-3 gap-3 overflow-auto  lg:justify-around" data-aos="fade-up" data-aos-duration="1000">
                     <!-- card 1 -->
                     <div>
                         <div class="relative">
@@ -284,7 +285,7 @@
             </video>
             <div class=" hidden sm:flex w-full flex-col lg:pl-24 sm:px-4 sm:text-center gap-10 lg:mb-20 ">
                 <h1 class="font-bold lg:text-3xl lg:mb-20 lg:pt-14 text-xl">Por que somos especiais?</h1>
-                <div class="h-full flex flex-col lg:gap-10 gap-8 px-5">
+                <div class="h-full flex flex-col lg:gap-10 gap-8 px-5" data-aos="fade-down" data-aos-duration="1000">
                     <div >
                         <h2 class="lg:text-xl font-bold mb-1">Roupas que Refletem Seu Estilo</h2>
                         <p class="text-sm lg:text-lg">Explore nossa seleção única que abraça diversos estilos, garantindo que você encontre peças que expressem sua individualidade.</p>
@@ -323,6 +324,10 @@
        </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
     <script src="./src/script/script.js"></script>
     
 </body>
