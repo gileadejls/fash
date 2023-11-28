@@ -1,0 +1,33 @@
+<%- include('partials/headerlogin') %>
+<div class="w-full h-full ">
+    <h1 class="text-center text-2xl pt-10">Cadastro</h1>
+    <% if(success) { %>
+        <div class="w-full text-center">
+            <h1 class="text-2xl font-bold">Cadastrado com sucesso!</h1>
+        </div>
+    <% } else { %>
+        <form class="flex flex-col p-4 gap-2 pt-10" >
+            <label class="text-xl pl-1">Usuario/Nome</label>
+            <p id="userfail" class="text-red-400"></p>
+            <input type="text" name="nome" placeholder="Usuario" id="nome" class="mb-6 px-3 py-4 outline-none border-none shadow-md bg-gray-50" pattern="[a-zA-Z]+" title="Somente letras são permitidas" maxlength="12" required>
+    
+            <label class="text-xl pl-1">Email</label>
+            <p id="emailfail" class="text-red-400"></p>
+            <input type="email" name="email" placeholder="email@email.com" id="email" class="mb-6 px-3 py-4 outline-none border-none shadow-md bg-gray-50" pattern="[.+@gmail.com]" title="Por favor, digite um email valido! " maxlength="30" required>
+    
+            <label class="text-xl pl-1">Senha</label>
+            <p id="passfail" class="text-red-400"></p>
+            <input type="password" name="senha" placeholder="********" id="senha" class="mb-6 px-3 py-4 outline-none border-none shadow-md bg-gray-50" maxlength="15" required>
+    
+            <label class="text-xl pl-1">Repita a senha</label>
+            <p id="passfail2" class="text-red-400"></p>
+            <input type="password" name="senha" placeholder="********" id="senha2" class="mb-6 px-3 py-4 outline-none border-none shadow-md bg-gray-50" maxlength="15"  required>   
+    
+            <button id="button-cadastrar" class=" bg-black text-white h-16 rounded-lg outline-none border-none shadow-md text-lg">Cadastrar</button>
+        </form>
+    <% } %>
+   <div class="flex gap-1 w-full justify-center text-lg pt-5">
+        <h2>Já tem uma conta?</h2><a href="/login"><h2 class="font-bold hover:underline">faça login aqui!</h2></a>
+   </div>
+</div>
+<script src="/script/script.js"></script>
