@@ -2,9 +2,11 @@
 <div class="w-full h-full ">
     <h1 class="text-center text-2xl pt-10">Faça login para continuar</h1>
 
-    <form action="/login" method="post" class="flex flex-col p-4 gap-2 pt-20">
-        <% if(err) { %>
-            <p class="text-red-400 text-center">Usuario Ou Senha Invalidos</p>
+    <form  action="/login" method="post"  class="flex flex-col p-4 gap-2 pt-20">
+        <% if(fails) { %>
+            <% fails.forEach((erro)=>{ %>
+                <p class="text-white bg-red-400 p-3"><%= erro %></p>
+            <% }) %>
         <% } %>
         <label class="text-xl pl-1">Usuario/Nome</label>
         <input type="text" name="nome" placeholder="Usuario" class="mb-6 px-3 py-4 outline-none border-none shadow-md bg-gray-50">

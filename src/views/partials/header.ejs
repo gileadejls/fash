@@ -10,21 +10,36 @@
     <title>It's Fashion Modas</title>
 </head>
 <body class=" w-screen flex justify-center">
+    <!-- MENU MOBILE -->
     <div class="menu-mobile-items w-56 bg-white shadow-xl fixed h-screen  right-0 z-40 pr-5 pt-5 translate-x-56 transition-transform lg:hidden">
         <!-- CLOSE MENU-->
         <div class="w-full flex justify-end">
             <img src="/icons/close.png" alt="" id="close"  style="width: 24px; height: 24px;">
         </div>
+        <% if(user){ %>
+            <div class="w-full pt-10 mb-10 flex justify-end items-center">
+                <div>
+                    <img src="/icons/user.png" alt="" class="scale-75">
+                </div>
+                <div class="flex flex-col gap-1">
+                    <p>Olá, <b><%= user %></b> !</p>
+                    <p>Acessar conta</p>
+                </div>
+            </div>
+        <% } %>
         <div class="flex flex-col w-full items-end pt-10 gap-10">
             <a href="/" class="font-bold">INICIO</a>
             <a href="#lancamentos" class="font-bold">LANÇAMENTOS</a>
             <a href="#ofertas" class="font-bold">OFERTAS</a>
             <a href="#servicos" class="font-bold">SERVIÇOS</a>
             <a href="#fale-conosco" class="font-bold">CONTATO</a>
-            <a href="/login" class="font-bold">FAZER LOGIN</a>
+            <% if(user) { %>
+            <a href="#fale-conosco" class="font-bold">SAIR</a>
+            <% } %>
+
         </div>
     </div>
-    <div class=" h-full relative w-full max-w-7xl">
+    <div class=" h-full relative w-full max-w-5xl">
 
         <header>
             <div class="menu-mobile w-full flex justify-end pr-5 pt-2 md:hidden">
@@ -37,13 +52,20 @@
                     <h1 class=" font-bold text-3xl">IT'S FASHION</h1>
                     <h2 class="italic">Roupas, calçados e acessórios</h2>
                 </div>
-                <nav class="flex gap-5 md:text-xs lg:text-sm">
+                <nav class="flex gap-5 md:text-xs lg:text-sm ">
                     <a href="/" class="font-bold">INICIO</a>
                     <a href="#lancamentos" class="font-bold">LANÇAMENTOS</a>
                     <a href="#ofertas" class="font-bold">OFERTAS</a>
                     <a href="#servicos" class="font-bold">SERVIÇOS</a>
                     <a href="#fale-conosco" class="font-bold">CONTATO</a>
+                    <% if(user) { %>
+                        <div class="w-full flex gap-2 ">
+                            <p>Olá, <b><%= user %></b>!</p>
+                            <p class="font-bold">SAIR</p>
+                        </div>
+                    <% } else{ %>
                     <a href="/login" class="font-bold">FAZER LOGIN</a>
+                    <% } %>
                 </nav>
             </div>
             

@@ -21,50 +21,6 @@ close.addEventListener("click", ()=>{
 
 
 
-if(buttonCadastrar){
-    buttonCadastrar.addEventListener("click", (event)=>{
-
-        event.preventDefault()
-    
-        const data = validate('registrar', null)
-    
-        if(data.nome === "" || data.password === "" || data.email === "" || !data){
-            console.log("data invalida")
-            return 
-        }
-    
-        console.log("passou")
-    
-    
-        fetch('/cadastro', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'text/html'
-            },
-            
-            body: JSON.stringify(data)
-        }).then(res => {
-            if(res.ok) return res.json()
-            return res.json().then(json => Promise.reject(json))
-        }).then(url => {
-            if(url.msg){
-                cadastrarformulario.style = 'display: none;'
-                const div = document.createElement('div')
-                div.innerHTML = `
-                <div class="w-full text-center">
-                    <h1 class="text-2xl font-bold">Cadastrado com sucesso!</h1>
-                </div>
-                `
-                container.appendChild(div)
-            }
-        }).catch((e => console.log(e)))
-    
-    })
-}
-
-
-
 function validate(){
     const nome = document.querySelector('#nome')
     const email = document.querySelector('#email')
@@ -91,7 +47,7 @@ function validate(){
     let tamanhoDoEmailInvalido = email.value.length >= 30
     let tamanhoDaSenhaInvalida = senha.value.length >= 15 || senha2.value.length >= 15
     let emailInvalido = email.value.match(emailRegex) === null
-
+    
 
     if(!nome.value || !email.value || !senha.value){
         alert("Por favor, preencha os campos.")
@@ -122,13 +78,8 @@ function validate(){
         return false
     }
 
+    return true
 
-
-    return ({
-        nome: nome.value,
-        email: email.value,
-        senha: senha.value
-    })
     
 }
 

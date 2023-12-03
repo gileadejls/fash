@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
+
 
 const LoginShema = new mongoose.Schema({
     user: String,
@@ -23,11 +25,19 @@ class  Login {
         }
 
         try {
-            this.user = await LoginModel.findOne({user: this.body.nome, password: this.body.senha })
+
+            this.user = await LoginModel.findOne({user: this.body.nome})
             if(!this.user){
-                this.errors.push('Usuario Ou Senha Invalidos')
+                this.errors.push('Usuario Inexistente')
                 return
             }
+            
+            if(!bcrypt.compareSync(this.body.senha, this.user.password)){
+                this.errors.push('Senha Invalida')
+                return
+            }
+
+            //GERA O TOKEN PARA O USUARIO QUE ACABOU DE LOGAR
 
             return true
         } catch (e) {
@@ -40,18 +50,36 @@ class  Login {
         this.validate()
         console.log(this.body)
 
-        if(this.errors.length > 0){
-            console.log("erro aconteceu")
-            return false
-        }
+        if(this.errors.length > 0) return
+        await this.userExist()
+        
+        if(this.errors.length > 0 ) return
+
         try{
-            console.log("foi enviado mesmo assim")
+            const salt = bcrypt.genSaltSync()
+            this.body.senha = bcrypt.hashSync(this.body.senha, salt)
             this.user = await LoginModel.create({user: this.body.nome, email: this.body.email, password: this.body.senha})
             return true
 
         } catch (e) {
             console.log(e)
         }
+    }
+
+    async userExist(){
+        const user = await LoginModel.findOne({ user: this.body.nome})
+
+        if(user){
+            this.errors.push("Usuario já existe!, faça login agora mesmo!")
+            return
+        }
+
+        const email = await LoginModel.findOne({ email: this.body.email})
+
+        if(email){
+            this.errors.push("O Email ja foi cadastrado! faça login agora mesmo!")
+        }
+
     }
 
     validate(){
